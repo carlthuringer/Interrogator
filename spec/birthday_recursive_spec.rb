@@ -30,17 +30,17 @@ describe Birthday do
   end
 
   it "Responds to the interrogation with statements" do
-    Birthday.should_receive(:gets).and_return("1970")
-    Birthday.should_receive(:gets).and_return("Oct")
-    Birthday.should_receive(:gets).and_return("5")
+    Birthday.should_receive(:get_input).and_return("1970")
+    Birthday.should_receive(:get_input).and_return("Oct")
+    Birthday.should_receive(:get_input).and_return("5")
     Birthday.should_receive(:puts).at_least(:once).with("So, you were born on Oct 5, 1970?")
     Birthday.interrogate
   end
 
   it "Responds naturally when given different inputs" do
-    Birthday.should_receive(:gets).and_return("1983")
-    Birthday.should_receive(:gets).and_return("Oct")
-    Birthday.should_receive(:gets).and_return("4")
+    Birthday.should_receive(:get_input).and_return("1983")
+    Birthday.should_receive(:get_input).and_return("Oct")
+    Birthday.should_receive(:get_input).and_return("4")
     Birthday.should_receive(:puts).at_least(:once).with("So, you were born on Oct 4, 1983?")
     Birthday.interrogate
   end

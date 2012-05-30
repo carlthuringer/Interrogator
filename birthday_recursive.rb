@@ -1,14 +1,17 @@
 class Birthday
   def self.interrogate
-    year = ""
-    month = ""
-    day = ""
     puts "What year were you born in?"
-    gets year
+    year = get_input
     puts "What month were you born in?"
-    gets month
+    month = get_input
     puts "What day were you born on?"
-    gets day
+    day = get_input
     puts "So, you were born on #{month} #{day}, #{year}?"
+  end
+
+  def self.get_input
+    input = ""
+    gets input
+    input
   end
 end
