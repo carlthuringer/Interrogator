@@ -6,14 +6,18 @@ class Birthday
   end
 
   def self.interrogate
-    answers = questions.map do |question|
-      puts question
-      get_input
-    end
+    answers = ask_questions
 
     puts "So, you were born on #{answers[1]} #{answers[2]}, #{answers[0]}?"
     return if confirm_data_correct == true
     interrogate
+  end
+
+  def self.ask_questions
+    questions.map do |question|
+      puts question
+      get_input
+    end
   end
 
   def self.get_input
