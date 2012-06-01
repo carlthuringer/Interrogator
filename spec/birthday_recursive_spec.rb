@@ -81,14 +81,14 @@ describe Birthday do
     it "Asks questions" do
       Birthday.should_receive(:puts).exactly(3).times
       Birthday.should_receive(:get_input).exactly(3).times
-      Birthday.ask_questions
+      Birthday.ask_questions(Birthday.questions)
     end
 
     it "Returns the answers" do
       Birthday.should_receive(:get_input).and_return("Foo")
       Birthday.should_receive(:get_input).and_return("Bar")
       Birthday.should_receive(:get_input).and_return("Baz")
-      Birthday.ask_questions.should == ["Foo", "Bar", "Baz"]
+      Birthday.ask_questions(Birthday.questions).should == ["Foo", "Bar", "Baz"]
 
 
     end
