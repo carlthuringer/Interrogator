@@ -3,7 +3,7 @@ require './birthday_recursive.rb'
 describe Birthday do
   before do
     Birthday.stub!(:puts)
-    Birthday.stub!(:gets)
+    Birthday.stub!(:gets => mock.as_null_object)
   end
   it "exists" do
     Birthday
@@ -15,7 +15,7 @@ describe Birthday do
   end
 
   it "Requests some input for the year you were born in" do
-    Birthday.should_receive(:gets).and_return("1970")
+    Birthday.should_receive(:get_input).any_number_of_times
     Birthday.interrogate
   end
 
